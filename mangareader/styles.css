@@ -57,6 +57,7 @@ body.dark {
 
 body.seamless {
   --page-vertical-margin: 0;
+  display: flex;
 }
 
 /* Override user agent stylesheet */

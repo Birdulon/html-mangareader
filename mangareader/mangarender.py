@@ -42,7 +42,7 @@ def render_from_template(
     with open(outfile, 'w', encoding='utf-8', newline='\r\n') as renderfd:
         html_template = Template(doc_template)
         img_template = Template(page_template)
-        img_list = [
+        img_list = reversed([
             img_template.substitute(
                 img=imagepaths[i],
                 id=str(i),
@@ -50,7 +50,7 @@ def render_from_template(
                 nextid=str(i + 1) if i < len(imagepaths) - 1 else 'none',
             )
             for i in range(0, len(imagepaths))
-        ]
+        ])
         doc_string = html_template.substitute(pages=''.join(img_list), version=version, title=title)
         renderfd.write(doc_string)
     # print("view saved to " + outfile)
