@@ -8,7 +8,7 @@
   const defaultConfig = {
     smoothScroll: true,
     darkMode: false,
-    seamless: false,
+    seamless: true,
   };
 
   const screenClamp = {
@@ -576,6 +576,7 @@
     attachIntersectObservers();
     checkVersion();
     setupScrubber();
+    setImagesHeight(screenClamp.shrink, getHeight());
   }
 
   main();
